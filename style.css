@@ -21,6 +21,7 @@ nav {
   justify-content: center;
   align-items: center;
   min-height: 5rem;
+  opacity: 0;
   animation: fadeInDown 1s linear forwards;
 }
 section {
@@ -35,6 +36,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav--inner p {
@@ -307,6 +309,27 @@ section {
   display: flex;
   flex-direction: column;
   margin: 0.5rem 0;
+}
+
+.section__three--inner .column form .form--container .input--row--double {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 760px) {
+  .section__three--inner .column form .form--container .input--row--double {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.section__three--inner
+  .column
+  form
+  .form--container
+  .input--row--double
+  .input--row {
+  margin: 0 0.5rem 0 0;
 }
 
 .section__three--inner .column form .form--container .input--row label {

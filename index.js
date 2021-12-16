@@ -47,3 +47,64 @@ const Page = new PageController();
     Page.showDate();
   })();
 })();
+
+class FormController {
+  constructor(stepOneButton, submitButton, currentStep) {
+    this._stepOneButton = stepOneButton;
+    this._submitButton = submitButton;
+    this._currentStep = currentStep;
+  }
+
+  get currentStep() {
+    return this._currentStep;
+  }
+  set currentStep(index) {
+    return (this._currentStep = index);
+  }
+  get stepOneButton() {
+    return this._stepOneButton;
+  }
+  set stepOneButton(btn) {
+    return (this._stepOneButton = btn);
+  }
+  get submitButton() {
+    return this._submitButton;
+  }
+  set submitButton(btn) {
+    return (this._submitButton = btn);
+  }
+
+  handleFormVisibility(index) {
+    const formStepOne = document.querySelector(".step_one");
+    const formStepTwo = document.querySelector(".step_two");
+    //hide part 2 on initial load
+    if (index === 0) {
+      formStepOne.style.display = "flex";
+      formStepTwo.style.display = "none";
+    } else if (index > 0) {
+      formStepTwo.style.display = "flex";
+      formStepOne.style.display = "none";
+    }
+  }
+
+  buttonHandler() {
+    return this._stepOneButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      console.log("click");
+      this.handleFormVisibility(1);
+    });
+  }
+}
+
+const Form = new FormController();
+
+const btnOne = document.querySelector("#qualify-button");
+const btnTwo = document.querySelector("#submit-button");
+
+(() => {
+  Form.currentStep = 0;
+  Form.stepOneButton = btnOne;
+  Form.submitButton = btnTwo;
+  Form.handleFormVisibility(0);
+  Form.buttonHandler();
+})();

@@ -84,11 +84,11 @@
           </div>
           <div class="column">
             <form>
-              <div class="form--container">
+              <div class="form--container step_one">
                 <h2>CLAIM YOUR FUNDING</h2>
                 <div class="input--row">
                   <label>Total Monthly Credit Card Sales</label>
-                  <select>
+                  <select name="monthly-sales">
                     <option>1</option>
                     <option>1</option>
                     <option>1</option>
@@ -97,7 +97,7 @@
                 </div>
                 <div class="input--row">
                   <label>Select Time In Business</label>
-                  <select>
+                  <select name="time-in-biz">
                     <option>1</option>
                     <option>1</option>
                     <option>1</option>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="input--row">
                   <label>Select Total Monthly Gross Sales</label>
-                  <select>
+                  <select name="total-monthly-sales">
                     <option>1</option>
                     <option>1</option>
                     <option>1</option>
@@ -115,9 +115,111 @@
                 </div>
                 <div class="input--row">
                   <label>Email</label>
-                  <input type="email" placeholder="email" required="true" />
+                  <input
+                    type="email"
+                    placeholder="email"
+                    required="true"
+                    name="email"
+                  />
                 </div>
-                <button>Click To Qualify</button>
+                <button id="qualify-button">Click To Qualify</button>
+              </div>
+
+              <div class="form--container step_two">
+                <h2>CLAIM YOUR FUNDING</h2>
+                <div class="input--row">
+                  <label>Business Name</label>
+                  <input
+                    type="text"
+                    name="businessName"
+                    placeholder="Business Name"
+                  />
+                </div>
+                <div class="input--row">
+                  <label>Business Website</label>
+                  <input
+                    type="text"
+                    name="businessWebsite"
+                    placeholder="Business Website(If Available)"
+                  />
+                </div>
+                <div class="input--row">
+                  <label>Province</label>
+                  <select name="province">
+                    <option value="AB">Alberta</option>
+                    <option value="BC">British Columbia</option>
+                    <option value="MB">Manitoba</option>
+                    <option value="NB">New Brunswick</option>
+                    <option value="NL">Newfoundland and Labrador</option>
+                    <option value="NS">Nova Scotia</option>
+                    <option value="NT">Northwest Territories</option>
+                    <option value="NU">Nunavut</option>
+                    <option value="ON">Ontario</option>
+                    <option value="PE">Prince Edward Island</option>
+                    <option value="QC">Quebec</option>
+                    <option value="SK">Saskatchewan</option>
+                    <option value="YT">Yukon</option>
+                  </select>
+                </div>
+                <div class="input--row--double">
+                  <div class="input--row">
+                    <label>Postal Code</label>
+                    <input
+                      type="text"
+                      placeholder="Postal Code"
+                      required="true"
+                      name="zip"
+                    />
+                  </div>
+                  <div class="input--row">
+                    <label>Phone #</label>
+                    <input
+                      type="tel"
+                      placeholder="Phone #"
+                      required="true"
+                      name="phone"
+                    />
+                  </div>
+                </div>
+                <div class="input--row--double">
+                  <div class="input--row">
+                    <label>First Name</label>
+                    <input
+                      type="text"
+                      placeholder="First Name"
+                      required="true"
+                      name="firstName"
+                    />
+                  </div>
+                  <div class="input--row">
+                    <label>Last Name</label>
+                    <input
+                      type="text"
+                      placeholder="Last Name"
+                      required="true"
+                      name="lastName"
+                    />
+                  </div>
+                </div>
+                <div class="input--row--double">
+                  <div class="input--row">
+                    <label>Credit Score</label>
+                    <select required="true" name="creditscore">
+                      <option></option>
+                      <option></option>
+                      <option></option>
+                    </select>
+                  </div>
+                  <div class="input--row">
+                    <label>Best Time To Contact</label>
+                    <select required="true" name="contact">
+                      <option></option>
+                      <option></option>
+                      <option></option>
+                    </select>
+                  </div>
+                </div>
+                <button id="submit-button">Submit</button>
               </div>
             </form>
           </div>
